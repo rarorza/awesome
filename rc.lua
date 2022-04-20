@@ -252,6 +252,7 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             tbox_separator,
           --mykeyboardlayout,
+            require("battery-widget") {}, --recommend install 'aspid' and enable in systemctl
             mytextclock,
             tbox_separator2,
             wibox.widget.systray(),
