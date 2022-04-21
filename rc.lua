@@ -16,6 +16,8 @@ require("awful.autofocus")
 local logout_menu_widget = require ("awesome-wm-widgets.logout-menu-widget.logout-menu")
 local lain = require("lain")
 local wibox = require("wibox")
+local battery_widget = require("battery-widget")
+local BAT0 = battery_widget { adapter = "BAT0", ac = "AC" }
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
@@ -252,7 +254,7 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             tbox_separator,
           --mykeyboardlayout,
-            require("battery-widget") {}, --recommend install 'aspid' and enable in systemctl
+            BAT0, --recommend install 'aspid' and enable in systemctl
             mytextclock,
             tbox_separator2,
             wibox.widget.systray(),
