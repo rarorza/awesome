@@ -655,7 +655,7 @@ beautiful.useless_gap = 6
 
 awful.spawn.with_shell('/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1')
 awful.spawn.with_shell('nitrogen --restore')
-awful.spawn.with_shell('picom -- experimental-backends -b')
+awful.spawn.with_shell('picom --experimental-backends -b')
 awful.spawn.with_shell('nvidia-settings -l')
 awful.spawn.with_shell('xset s off')
 awful.spawn.with_shell('xset -dpms')
