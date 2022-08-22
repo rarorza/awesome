@@ -18,4 +18,4 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
 alias ls="exa --icons"
-alias cat"bat --style=auto"
+alias cat="bat --style=auto"
