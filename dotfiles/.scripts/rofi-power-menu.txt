@@ -1,0 +1,9 @@
+rofi -show p -modi p:rofi-power-menu \
+  -theme android_notification \
+  -font "JetBrains Mono NF 12" \
+  -width 20 \
+  -lines 6
+
+
+
+Run this command in terminal after install 'rofi-power-menu' aur our git

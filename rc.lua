@@ -14,6 +14,7 @@ local awful = require("awful")
 require("awful.autofocus")
 -- Widget and layout library
 local logout_menu_widget = require ("awesome-wm-widgets.logout-menu-widget.logout-menu")
+local volume_widget = require ("awesome-wm-widgets.volume-widget.volume")
 local lain = require("lain")
 local wibox = require("wibox")
 local battery_widget = require("battery-widget")
@@ -74,7 +75,7 @@ terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. "nvim"
 browser = "google-chrome-stable"
-fm = "nautilus"
+fm = "dolphin"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -109,10 +110,24 @@ awful.layout.layouts = {
 ------------------------------------------------
 
 -- Separator Blanc
-tbox_separator2 = wibox.widget.textbox("")
+tbox_separator2 = wibox.widget.textbox(" ")
 
 -- Separator
 tbox_separator = wibox.widget.textbox(" | ")
+
+-- CPU Widget
+local cpu = lain.widget.cpu {
+  settings = function ()
+    widget:set_markup(" CPU " .. cpu_now.usage.. "%  ")
+  end
+}
+
+-- RAM Widget
+local mymem = lain.widget.mem {
+  settings = function ()
+    widget:set_markup(" RAM " .. mem_now.perc.. "% ")   
+  end
+}
 
 -- {{{ Menu
 -- Create a launcher widget and a main menu
@@ -253,12 +268,18 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             tbox_separator,
+            volume_widget{
+              widget_type = 'arc' -- recommend install 'alsa-utils'
+            },
+            tbox_separator2,
+            mymem,
+            cpu.widget,
           --mykeyboardlayout,
             BAT0, --recommend install 'aspid' and enable in systemctl
             mytextclock,
             tbox_separator2,
             wibox.widget.systray(),
-            logout_menu_widget(),
+          --logout_menu_widget(),
         },
     }
 end)
@@ -324,6 +345,11 @@ globalkeys = gears.table.join(
         end,
         {description = "go back", group = "client"}),
 
+    -- Widget Volume
+    awful.key({ modkey }, "]", function() volume_widget:inc(5) end),
+    awful.key({ modkey }, "[", function() volume_widget:dec(5) end),
+    awful.key({ modkey }, "\\", function() volume_widget:toggle() end),
+  
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
@@ -336,13 +362,16 @@ globalkeys = gears.table.join(
               {description = "open a browser", group = "launcher"}),
     awful.key({ modkey,           }, "F2",     function () awful.spawn(fm)          end,
 	      {description = "open a file manager", group = "launcher"}),
-    awful.key({ modkey,		},   "F12",	function () awful.spawn("/home/rarorza/.scripts/rofi-wifi-menu/rofi-wifi-menu.sh") end,
+    awful.key({ modkey,         },  "F3",       function () awful.spawn("alacritty -e ranger") end,
+        {descrption = "open ranger", group = "Personal launchers"}),
+    awful.key({ modkey,		},   "F12",	function () awful.spawn("rofi -show p -modi p:rofi-power-menu") end,
+	{description = "Rofi power menu", group = "Personal launchers"}), -- need to install "rofi-power-menu" aur
+    awful.key({ modkey,		},   "F11",	function () awful.spawn("/home/rarorza/.scripts/rofi-wifi-menu/rofi-wifi-menu.sh") end,
 	{description = "Rofi wifi menu", group = "Personal launchers"}),
-    awful.key({ modkey,		},   "F11",	function () awful.spawn("/home/rarorza/.scripts/rofi-bluetooth/rofi-bluetooth") end,
+    awful.key({ modkey,		},   "F10",	function () awful.spawn("/home/rarorza/.scripts/rofi-bluetooth/rofi-bluetooth") end,
 	{description = "Rofi bluetooth menu", group = "Personal launchers"}),
 
-    awful.key({ modkey,         },  "F10",       function () awful.spawn("alacritty -e ranger") end,
-        {descrption = "Open ranger", group = "Personal launchers"}),
+
     awful.key({ modkey         },   "p",      function () awful.spawn("rofi -show drun") end,
             {description = "rofi-apps", group = "Personal launchers"}),
     awful.key({ modkey, "Shift"   }, "s",     function () awful.spawn("flameshot gui") end,
@@ -655,7 +684,8 @@ beautiful.useless_gap = 6
 
 awful.spawn.with_shell('/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1')
 awful.spawn.with_shell('nitrogen --restore')
-awful.spawn.with_shell('picom --experimental-backends -b')
+--awful.spawn.with_shell('picom --experimental-backends -b')
+awful.spawn.with_shell('picom &')
 awful.spawn.with_shell('nvidia-settings -l')
 awful.spawn.with_shell('xset s off')
 awful.spawn.with_shell('xset -dpms')
