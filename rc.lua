@@ -275,7 +275,7 @@ awful.screen.connect_for_each_screen(function(s)
             mymem,
             cpu.widget,
           --mykeyboardlayout,
-            BAT0, --recommend install 'aspid' and enable in systemctl
+            BAT0, --recommend install 'acpid' and enable in systemctl
             mytextclock,
             tbox_separator2,
             wibox.widget.systray(),
