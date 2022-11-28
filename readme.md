@@ -1,6 +1,6 @@
 # AwesomeWM
 
-Config files for AwesomeWM with widgets (power menu, bluetooth menu and wifi menu), picom, ranger, alacrity and zsh.
+Config files for AwesomeWM with widgets (battery, power menu, bluetooth menu and wifi menu), picom, ranger, alacrity and zsh.
 
 You can try my [script](https://github.com/rarorza/script) for post install Arch Linux or drop the files manually.
 
