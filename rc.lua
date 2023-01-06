@@ -364,12 +364,12 @@ globalkeys = gears.table.join(
 	      {description = "open a file manager", group = "launcher"}),
     awful.key({ modkey,         },  "F3",       function () awful.spawn("alacritty -e ranger") end,
         {descrption = "open ranger", group = "Personal launchers"}),
-    awful.key({ modkey,		},   "F12",	function () awful.spawn("rofi -show p -modi p:rofi-power-menu") end,
-	{description = "Rofi power menu", group = "Personal launchers"}), -- need to install "rofi-power-menu" aur
     awful.key({ modkey,		},   "F11",	function () awful.spawn("/home/rarorza/.scripts/rofi-wifi-menu/rofi-wifi-menu.sh") end,
 	{description = "Rofi wifi menu", group = "Personal launchers"}),
     awful.key({ modkey,		},   "F10",	function () awful.spawn("/home/rarorza/.scripts/rofi-bluetooth/rofi-bluetooth") end,
 	{description = "Rofi bluetooth menu", group = "Personal launchers"}),
+    awful.key({ modkey,		},   "F12",	function () awful.spawn("rofi -show p -modi p:rofi-power-menu") end,
+	{description = "Rofi power menu", group = "Personal launchers"}), -- need to install "rofi-power-menu" aur
 
 
     awful.key({ modkey         },   "p",      function () awful.spawn("rofi -show drun") end,
