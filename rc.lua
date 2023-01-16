@@ -250,7 +250,7 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    s.mywibox = awful.wibar({ position = "top", screen = s, visible = false }) -- "true" make wibar visible
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -301,7 +301,7 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+    awful.key({ modkey,           }, ";",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
@@ -370,10 +370,12 @@ globalkeys = gears.table.join(
 	{description = "Rofi bluetooth menu", group = "Personal launchers"}),
     awful.key({ modkey,		},   "F12",	function () awful.spawn("rofi -show p -modi p:rofi-power-menu") end,
 	{description = "Rofi power menu", group = "Personal launchers"}), -- need to install "rofi-power-menu" aur
-
-
     awful.key({ modkey         },   "p",      function () awful.spawn("rofi -show drun") end,
             {description = "rofi-apps", group = "Personal launchers"}),
+    awful.key({ modkey, "Shift"   }, "p",     function () awful.spawn("/home/rarorza/.scripts/rofi-files/rofi-files") end,
+              {description = "rofi files", group = "Personal launchers"}),
+    awful.key({ modkey         },   "s",      function () awful.spawn("/home/rarorza/.scripts/rofi-search/rofi-search") end,
+            {description = "rofi web seach", group = "Personal launchers"}),
     awful.key({ modkey, "Shift"   }, "s",     function () awful.spawn("flameshot gui") end,
               {description = "open flameshot", group = "Personal launchers"}),
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
@@ -404,6 +406,17 @@ globalkeys = gears.table.join(
                   end
               end,
               {description = "restore minimized", group = "client"}),
+
+    -- Show/Hide Wibox
+    awful.key({ modkey,		}, "b", function ()
+             for s in screen do
+                 s.mywibox.visible = not s.mywibox.visible
+                 if s.mybottomwibox then
+                     s.mybottomwibox.visible = not s.mybottomwibox.visible
+                 end
+            end
+         end,
+         {description = "toggle wibox", group = "awesome"}),
 
     -- Prompt
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
