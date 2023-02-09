@@ -75,7 +75,7 @@ terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. "nvim"
 browser = "google-chrome-stable"
-fm = "dolphin"
+fm = "nemo"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
