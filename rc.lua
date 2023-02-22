@@ -370,9 +370,9 @@ globalkeys = gears.table.join(
 	{description = "Rofi bluetooth menu", group = "Personal launchers"}),
     awful.key({ modkey,		},   "F12",	function () awful.spawn("rofi -show p -modi p:rofi-power-menu") end,
 	{description = "Rofi power menu", group = "Personal launchers"}), -- need to install "rofi-power-menu" aur
-    awful.key({ modkey         },   "p",      function () awful.spawn("rofi -show drun") end,
+    awful.key({ modkey         },   "/",      function () awful.spawn("rofi -show drun") end,
             {description = "rofi-apps", group = "Personal launchers"}),
-    awful.key({ modkey, "Shift"   }, "p",     function () awful.spawn("/home/rarorza/.scripts/rofi-files/rofi-files") end,
+    awful.key({ modkey, "Shift"   }, "/",     function () awful.spawn("/home/rarorza/.scripts/rofi-files/rofi-files") end,
               {description = "rofi files", group = "Personal launchers"}),
     awful.key({ modkey         },   "s",      function () awful.spawn("/home/rarorza/.scripts/rofi-search/rofi-search") end,
             {description = "rofi web seach", group = "Personal launchers"}),
