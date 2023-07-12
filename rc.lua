@@ -71,7 +71,7 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "Dark/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "kitty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. "nvim"
 browser = "google-chrome-stable"
@@ -362,7 +362,7 @@ globalkeys = gears.table.join(
               {description = "open a browser", group = "launcher"}),
     awful.key({ modkey,           }, "F2",     function () awful.spawn(fm)          end,
 	      {description = "open a file manager", group = "launcher"}),
-    awful.key({ modkey,         },  "F3",       function () awful.spawn("alacritty -e ranger") end,
+    awful.key({ modkey,         },  "F3",       function () awful.spawn("kitty -e ranger") end,
         {descrption = "open ranger", group = "Personal launchers"}),
     awful.key({ modkey,		},   "F11",	function () awful.spawn("/home/rarorza/.scripts/rofi-wifi-menu/rofi-wifi-menu.sh") end,
 	{description = "Rofi wifi menu", group = "Personal launchers"}),
