@@ -1,6 +1,6 @@
-# AwesomeWM
+# Window Managers Files
 
-Config files for AwesomeWM with widgets (battery, power menu, bluetooth menu and wifi menu), Rofi, Picom, Ranger, Alacritty and Zsh.
+Config files for AwesomeWM, i3WM, Rofi, Picom, Ranger, Alacritty and Zsh.
 
 You can try my [script](https://github.com/rarorza/script) for post install Arch Linux or drop the files manually.
 
