@@ -51,7 +51,7 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-# firefox
+# chrome
 bindsym $mod+F1 exec google-chrome-stable
 
 # dolphin
