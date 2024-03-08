@@ -260,3 +260,15 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst &
 #exec --no-startup-id picom &
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
+
+##################################
+####### FLOATING WINDOWS #########
+##################################
+# testing
+
+for_window [window_role="pop-up"]                       floating enable
+for_window [window_role="bubble"]                       floating enable 
+for_window [window_role="task_dialog"]                  floating enable
+for_window [window_role="Preferences"]                  floating enable
+for_window [window_type="dialog"]                       floating enable 
+for_window [window_type="menu"]                         floating enable
