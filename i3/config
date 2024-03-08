@@ -258,3 +258,5 @@ exec --no-startup-id polybar example -r
 exec --no-startup-id nvidia-settings -l
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst &
+#exec --no-startup-id picom &
+exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
