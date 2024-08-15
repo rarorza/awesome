@@ -1,0 +1,3 @@
+https://github.com/lcpz/lain
+https://github.com/deficient/battery-widget
+https://github.com/streetturtle/awesome-wm-widgets
