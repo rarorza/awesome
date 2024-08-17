@@ -25,7 +25,7 @@ prompt-background-padding = 1, 5, 1, 5
 prompt-background-corner-radius = 6
 prompt-color = #a7b3bc
 
-select-background = #2e334b
-selection-color = #a7b3bc
+select-background = #464e75
+selection-color = #30d9e6
 selection-background-padding = 1, 5, 1, 5
 selection-background-corner-radius = 6
