@@ -1,0 +1,412 @@
+{
+  "editor.lineNumbers": "relative",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.list.smoothScrolling": true,
+  "window.menuBarVisibility": "compact",
+  "workbench.editor.enablePreview": false,
+  // "workbench.activityBar.location": "hidden",
+  "workbench.editor.labelFormat": "short",
+  // Explorer
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": true,
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Mono', 'Fira Code Nerd Font'",
+  "editor.tabSize": 2,
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.8,
+  "editor.fontWeight": "400",
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "editor.renderControlCharacters": false,
+  "editor.renderLineHighlight": "gutter",
+  "editor.minimap.enabled": false,
+  "editor.detectIndentation": true,
+  "editor.snippetSuggestions": "top",
+  "editor.wordBasedSuggestions": "off",
+  "editor.suggest.localityBonus": true,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.formatOnPaste": false,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.mouseWheelScrollSensitivity": 2,
+  "editor.smoothScrolling": true,
+  "editor.mouseWheelZoom": true,
+  "editor.linkedEditing": true,
+  "editor.glyphMargin": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll": "explicit"
+  },
+  "editor.suggestSelection": "first",
+  "editor.guides.bracketPairs": "active",
+  "editor.cursorBlinking": "phase",
+  "editor.cursorWidth": 4,
+  // Git
+  "git.enableSmartCommit": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  // Debug
+  "debug.console.fontSize": 18,
+  // Files and search
+  "files.defaultLanguage": "{activeEditorLanguage}",
+  "files.exclude": {
+    "USE_GITIGNORE": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.build": true,
+    "**/.gh-pages": true
+  },
+  // Terminal
+  "terminal.integrated.copyOnSelection": false,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.external.linuxExec": "x-terminal-emulator",
+  "terminal.integrated.fontFamily": "'MesloLGS Nerd Font', 'JetBrainsMono Nerd Font', 'Hack Nerd Font', 'JetBrains Mono', Courier, Monaco, monospace",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.drawBoldTextInBrightColors": false,
+  "terminal.integrated.enableFileLinks": "off",
+  "terminal.integrated.env.linux": {
+    // "PORT": "4000"
+  },
+  "terminal.integrated.env.windows": {
+    //
+  },
+  // Csharp
+  "[csharp]": {
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true
+  },
+  // Python
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "python.defaultInterpreterPath": "venv/bin/python",
+  "python.testing.unittestEnabled": true,
+  "python.languageServer": "Pylance",
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [], // -x to bail
+  "flake8.args": [
+    "--max-line-length=80"
+  ],
+  "pylint.args": [
+    "--load-plugins=pylint_django",
+    "--errors-only",
+    "--django-settings-module=project.settings"
+  ],
+  "autopep8.args": [
+    "--indent-size=4"
+  ],
+  // Django
+  "[django-html]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2,
+    "editor.indentSize": "tabSize",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+  "files.associations": {
+    // Django
+    "**/templates/*.html": "django-html",
+    "**/templates/**/*.html": "django-html",
+    "**/base_templates/**/*.html": "django-html",
+    "**/templates/*": "django-txt",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements",
+    "django-html": "html",
+    // React
+    "*.js": "javascript",
+    "*.jsx": "javascriptreact",
+    "*.xml": "html",
+    "*.svg": "html",
+    "*.html": "html",
+    "**/*.html": "html"
+  },
+  // Emmet
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "emmet.includeLanguages": {
+    "django-html": "html", // batisteo.vscode-django
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  // HTML CSS
+  "[html]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+  "html.format.wrapLineLength": 80,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  // Javascript
+  "[javascript]": {
+    "editor.suggestSelection": "recentlyUsed",
+    "editor.suggest.showKeywords": false,
+    "editor.maxTokenizationLineLength": 2500,
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.validate.enable": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true,
+  // Vue
+  "[vue]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsx]": {
+    "editor.tabSize": 2
+  },
+  "[jsx-tags]": {
+    "editor.tabSize": 2
+  },
+  "symbols.hidesExplorerArrows": false,
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 80,
+  "remote.autoForwardPortsSource": "hybrid",
+  // ##################### Extensions ##################### //
+  // CSpell checker extension
+  "cSpell.enabled": true,
+  "cSpell.language": "en,pt,pt_BR",
+  "cSpell.userWords": [
+    "sqlalchemy"
+  ],
+  "cSpell.enableFiletypes": [
+    "shellscript"
+  ],
+  // Code runner
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.ignoreSelection": true,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.preserveFocus": false,
+  "code-runner.executorMap": {
+    "python": "clear ; python -u",
+    "typescript": "npx ts-node --files --transpile-only",
+    "csharp": "dotnet run"
+  },
+  // vim
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // NAVIGATION
+    // switch b/w buffers
+    {
+      "before": [
+        "<S-h>"
+      ],
+      "commands": [
+        ":bprevious"
+      ]
+    },
+    {
+      "before": [
+        "<S-l>"
+      ],
+      "commands": [
+        ":bnext"
+      ]
+    },
+    // splits
+    {
+      "before": [
+        "leader",
+        "v"
+      ],
+      "commands": [
+        ":vsplit"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "s"
+      ],
+      "commands": [
+        ":split"
+      ]
+    },
+    // panes
+    {
+      "before": [
+        "<C-h>",
+      ],
+      "commands": [
+        "workbench.action.focusLeftGroup"
+      ]
+    },
+    {
+      "before": [
+        "<C-j>",
+      ],
+      "commands": [
+        "workbench.action.focusBelowGroup"
+      ]
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "commands": [
+        "workbench.action.focusAboveGroup"
+      ]
+    },
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "commands": [
+        "workbench.action.focusRightGroup"
+      ]
+    },
+    // nice to have
+    {
+      "before": [
+        "leader",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "p"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    // default
+    {
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "after": [
+        "d",
+        "d"
+      ]
+    },
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "lineBreakInsert"
+      ],
+      "silent": true
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    // Stay in visual mode while indenting
+    {
+      "before": [
+        "<S-Tab>"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    },
+    {
+      "before": [
+        "Tab"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    // Move selected lines while staying in visual mode
+    {
+      "before": [
+        "<S-j>"
+      ],
+      "commands": [
+        "editor.action.moveLinesDownAction"
+      ]
+    },
+    {
+      "before": [
+        "<S-k>"
+      ],
+      "commands": [
+        "editor.action.moveLinesUpAction"
+      ]
+    },
+    // toggle comment selection
+    // { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  // To improve performance
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "terminal.integrated.tabs.location": "left",
+  "workbench.colorTheme": "Min Dark",
+}
